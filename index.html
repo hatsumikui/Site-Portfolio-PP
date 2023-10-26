@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <title>Portfólio</title>
+  </head>
+  <body>
+    <header id="inicio">
+      <h1>Trícia Tapajós</h1>
+    </header>
+    <div class="navbar">
+      <div class="container">
+        <a href="">Início</a>
+        <a href="#inicio">Sobre Mim</a>
+        <a href="#sobre">Acervo</a>
+        <a href="#conteudo">Contato</a>
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Pesquisar..." />
+          <button id="search-button">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div id="sobre" class="portfolio">
+        <h2>Sobre Mim</h2>
+        <h3>Estudante de Análise e Desenvolvimento de Sistemas</h3>
+        <p>
+          Sou uma estudante dedicada e apaixonada por tecnologia. Tenho
+          interesse em programação e desenvolvimento web, com experiência em
+          várias linguagens de programação, incluindo Java, Python e JavaScript.
+          Busco oportunidades para aplicar e expandir minhas habilidades
+          técnicas.
+        </p>
+      </div>
+      <div id="conteudo" class="portfolio">
+        <h2>Sobre Mim</h2>
+        <h3>.,</h3>
+        <p>
+          teste.
+        </p>
+        <br />
+        <img
+          src="https://static.wikia.nocookie.net/projectsekai/images/3/39/Twilight_Conversation_T.png/revision/latest?cb=20230920031526"
+        />
+        <img
+          src="https://static.wikia.nocookie.net/projectsekai/images/6/67/An_Officer%27s_Crisis.png/revision/latest?cb=20211021062921"
+        />
+      </div>
+      <div id="contato">
+        <h2>Contato</h2>
+        <h3>
+          Caso queira entrar em contato ou tenha alguma dúvida, por favor
+          utilize das ferramentas e informações abaixo
+        </h3>
+        <p>
+          teste.
+        </p>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 - Trícia Tapajós</p>
+      <a href="#inicio">Voltar ao Início</a>
+    </footer>
+
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+
+      document
+        .getElementById("search-button")
+        .addEventListener("click", function () {
+          var searchTerm = document
+            .getElementById("search-input")
+            .value.toLowerCase();
+          var articles = document.getElementsByTagName("article");
+          for (var i = 0; i < articles.length; i++) {
+            var article = articles[i];
+            var articleText = article.textContent.toLowerCase();
+            if (articleText.includes(searchTerm)) {
+              article.style.display = "block";
+            } else {
+              article.style.display = "none";
+            }
+          }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".featured-news").slick({
+          dots: true, // Adiciona pontos de navegação
+          infinite: true, // Navegação infinita
+          speed: 300, // Velocidade da transição
+          slidesToShow: 3, // Quantidade de slides visíveis ao mesmo tempo
+          slidesToScroll: 1, // Quantos slides avançar/retroceder por vez
+          autoplay: true, // Ativa a reprodução automática
+          autoplaySpeed: 2000 // Velocidade da reprodução automática (em milissegundos)
+        });
+      });
+    </script>
+  </body>
+</html>
